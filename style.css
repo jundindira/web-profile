@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+/* .container {
+  display: flex;
+} */
+  
+body {
+    margin: 0;
+    background: #222831;
+    color: rgb(255 255 255);
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+/* aside sidebar navbar*/
+  .sidebar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 64px;
+    background: #393e46;
+    transition: width 0.4s;
+    padding-top: 16px;
+    display: flex;
+    z-index: 3;
+  }
+  
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 16px;
+    cursor: pointer;
+  }
+
+  .sidebar nav {
+    margin-top: 50px;
+  }
+  
+  .sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 50px;
+    width: 100%;
+    padding: 0 16px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.75;
+  }
+  
+  .sidebar nav a:hover {
+    background: rgba(0, 0, 0, 0.125);
+    opacity: 1;
+  }
+  
+  .sidebar nav a p {
+    display: none;
+  }
+  
+  .sidebar.expanded {
+    width: 175px;
+  }
+  
+  .sidebar.expanded nav a p {
+    display: block;
+    margin: 0;
+  }
+  
+  .sidebar nav a i {
+    font-size: 24px;
+  }
+  
+/* main */
+  #home-page {
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  #home-page .content-page {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .content-page {
+    padding: 0px;
+    margin-left: 64px; /* Sidebar width */
+    position: absolute;
+    top: 100%;
+    left: 0; 
+    height: 100%;
+    width: calc(100% - 64px);
+    transition: top 0.4s;
+  }
+
+  .content-page.active {
+    top: 0;
+    display: block;
+}
+
+  #about-page .content-page,
+  #projects-page .content-page,
+  #socials-page .content-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    border-radius: 10px;
+    background: #222831;
+    width: 100%;
+  }
+
+  #bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .content-text {
+    background: rgba(17, 21, 25, 0.618);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .content-text h3 {
+    font-size: 28px;
+  }
+
+  .content-text h1 {
+    font-size: 55px;
+    font-family: 'Futura PT 500', sans-serif;
+  }
+
+  .content-text p {
+    font-size: 18px;
+  }
+
+  #about-img {
+    height: 220px;
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid #00adb5;
+    margin-right: 20px; /* Jarak antara gambar dan teks */
+  }
+
+  #about-page table {
+    text-align: left;
+  }
+
+  #about-page button {
+    background-color: #00fff5;
+    color: 06141b;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  #about-page button:hover {
+    background-color: #00adb5;
+  }
+
+  /* Card style */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+    background-color: #00adb5; /* Set card background color */
+    color: #222831; /* Set text color */
+  }
+
+  .card a {
+      text-decoration: none;
+      color: #222831;
+      font-size: 1.2em;
+      margin: 10px 0;
+  }
+
+  .card-text {
+      padding: 20px;
+      text-align: center;
+  }
+
+  .card-text p {
+      margin: 0;
+      line-height: 1.6;
+      text-align: center;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 20px; /* Jarak antara ikon */
+    justify-content: center; /* Agar ikon berada di tengah */
+    margin-bottom: 20px; /* Jarak antara ikon dan teks */
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
